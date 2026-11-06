@@ -1,0 +1,24 @@
+_ > nanoagent.plugin.v0001.ManifestConfig:
+id: pt-purged-walkforward
+name: PersonalTrader Purged Walk Forward
+version: 0.1.0
+status: in-development
+spec: nanoagent.plugin/v0001
+runtime > nanoagent.plugin.v0001.RuntimeConfig:
+  type: mcp_stdio
+  command: [uv, run, --frozen, python, -m, plugin]
+permissions > nanoagent.plugin.v0001.PermissionsConfig:
+  network > nanoagent.plugin.v0001.NetworkConfig:
+    hosts: []
+  filesystem > nanoagent.plugin.v0001.FilesystemConfig:
+    write: [workspace]
+tools > dict[contract.Tool, nanoagent.plugin.v0001.ToolConfig]:
+  compute:
+    description: "Build chronological train, validation and test folds with label-maturity purging and embargo sessions."
+tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
+  build-folds:
+    description: "Build chronological train, validation and test folds with label-maturity purging and embargo sessions."
+    runner: agent
+    tools: [compute]
+    reference: null
+    instructions: "Build chronological train, validation and test folds with label-maturity purging and embargo sessions. Return every output field. Provides a reproducible evaluation protocol for the abstract four-system comparison without calculating portfolio metrics."

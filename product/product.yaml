@@ -1,0 +1,9 @@
+_ > nanoagent.plugin.v0001.ProductConfig:
+tagline: "Build chronological train, validation and test folds with label-maturity purging and embargo sessions."
+summary: "Provides a reproducible evaluation protocol for the abstract four-system comparison without calculating portfolio metrics."
+highlights:
+  - "Use a frozen input snapshot without a market-data account"
+  - "Check the answer with a deterministic executable verifier"
+steps:
+  - "Supply the typed input shown in the task documentation"
+  - "Run the task and inspect the verified result"
